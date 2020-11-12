@@ -10,33 +10,23 @@ ReactHighcharts.Highcharts.setOptions(chartTheme);
 
 function Acquisitions() {
   const dispatch = useDispatch();
-  const acquisitions = useSelector(state => state.acquisitions)
-  const chunked =  useArrayChunk(acquisitions,10)
-  const [item = [], prev, next] = useIterator(chunked)
+  const acquisitions = useSelector((state) => state.acquisitions);
+  const chunked = useArrayChunk(acquisitions, 10);
+  const [item = [], prev, next] = useIterator(chunked);
 
-    const timestamps = item.map(time => new Date(time.timestamp * 1000).toLocaleDateString())
-    const sites =  item.map(acquisition => acquisition.sites)
-
-console.log(item)
-  //const sites =[56] 
- // const timestamps = ['2/3/2020']
-
-  
   useEffect(() => {
     dispatch(fetchAcquisitions());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="acquisitions">
-     <ReactHighcharts config={chartConfig(sites, timestamps)} />
-     <div className="acquzitions-slide">
-      <button onClick={prev}>Prev</button>
-      <button onClick={next}>Next</button>
-     </div>
+      <ReactHighcharts config={chartConfig(item)} />
+      <div className="acquzitions-slide">
+        <button onClick={prev}>Prev</button>
+        <button onClick={next}>Next</button>
+      </div>
     </div>
   );
 }
 
 export default Acquisitions;
-
-/*  <ReactHighcharts config={chartConfig(sites, timestamps)} /> */

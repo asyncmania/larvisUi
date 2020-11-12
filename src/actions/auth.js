@@ -1,3 +1,4 @@
+import { showError } from "./error";
 import { stopLoading } from "./loading";
 
 export const LOGIN = "LOGIN";
@@ -18,18 +19,17 @@ function logoutAction() {
 }
 
 export function login({ username, password }) {
-  return (dispatch, getState) => {
-    fetch("http://localhost:8080/token", {
-      method: "POST",
-      body: JSON.stringify({ user_id: username, password }),
-    })
-      .then((data) => data.json())
+  return (dispatch, getState, { http }) => {
+      http.postData('/token', { user_id: username, password })
       .then(({ access }) => {
         dispatch(loginAction({ token: access, name: username }));
         dispatch(stopLoading());
         localStorage.setItem("token", access);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        dispatch(stopLoading());
+        dispatch(showError())
+      });
   };
 }
 

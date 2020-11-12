@@ -51,7 +51,7 @@ button {
 }
 
 footer {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -77,10 +77,13 @@ button:hover {
   height: 100%;
 }
 .menu {
-  display: flex;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 .logo {
-  margin-right: auto;
+  justify-self: center;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -90,7 +93,7 @@ button:hover {
   font-size: 1.4rem;
   align-items: center;
 }
-.menu-item {
+.menu-item:not(:first-child) {
   margin-left: 2rem;
   cursor: pointer;
 }
@@ -110,16 +113,20 @@ button:hover {
   gap: 1rem;
 }
 
-.welcome {
-  display: grid;
+.login p {
+  margin-top: 1rem;
+  text-align: center;
+  color: red;
 }
 
-.welcome-text {
+.welcome {
+  margin: 10rem 0;
   font-size: 2rem;
-  margin: 2rem 0;
+  text-align: center;
 }
+
 .users {
-  margin: 3rem 0;
+  margin: 5rem 0;
   display: grid;
   grid-template-rows: max-content;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -139,13 +146,26 @@ button:hover {
 .user-details {
   margin: 5rem 0;
   font-size: 2rem;
-  display: flex;
+  display: grid;
   justify-content: center;
+  gap: 2rem;
 }
+.user-details button {
+  width: auto;
+  justify-self: center;
+  margin-top: 1rem;
+}
+.user-details form {
+ display: grid;
+ justify-self: center;
+}
+.user-details form button {
+  width: 100%;
+ }
 .acquisitions {
   margin: 5rem 0;
 }
-.acquzitions-slide{
+.acquzitions-slide {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -155,6 +175,12 @@ button:hover {
   width: auto;
   background-color: #464646;
 }
+.not-found {
+  font-size: 4rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+
 @media (min-width: 500px) {
   .login {
     padding: 8rem 10rem;
@@ -165,11 +191,19 @@ button:hover {
   .menu-items {
     font-size: 1.6rem;
   }
- 
+
+  .menu {
+    display: flex;
+  }
+  .logo {
+    margin-right: auto;
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
 
-@media(min-width: 1400px){
-  .main-content{
+@media (min-width: 1400px) {
+  .main-content {
     width: 114rem;
     margin: 0 auto;
   }

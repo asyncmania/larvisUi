@@ -13,7 +13,9 @@ function Header() {
         Logout
       </li>
     ) : (
-      <li className="menu-item">Login</li>
+      <Link className="menu-item" to="/login">
+        Login
+      </Link>
     );
   }
 
@@ -22,6 +24,9 @@ function Header() {
       <div className="menu">
         <div className="logo">Larvis UI</div>
         <ul className="menu-items">
+          <Link className="menu-item" to="/">
+            Home
+          </Link>
           <Link className="menu-item" to="/users">
             Users
           </Link>

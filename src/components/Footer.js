@@ -3,7 +3,7 @@ import React from 'react'
 
 function Footer() {
   return(
-    <footer>larvis UI</footer>
+    <footer>© larvis UI</footer>
   )
 }
 

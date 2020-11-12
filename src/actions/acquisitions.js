@@ -1,3 +1,4 @@
+import { showError } from "./error";
 import { startLoading, stopLoading } from "./loading";
 
 export const ADD_ACQUISITIONS = "ADD_ACQUISITIONS";
@@ -10,19 +11,20 @@ function addAquisition(acquisitions) {
 }
 
 export default function fetchAcquisitions() {
-  return (dispatch, getState, { dataCache }) => {
+  return (dispatch, getState, { dataCache, http }) => {
+    const acquisitions = dataCache.data["acquisitions"] || [];
+    if (acquisitions.length) return dispatch(addAquisition(acquisitions));
+
     dispatch(startLoading());
-    fetch(`http://localhost:8080/acquisitions`, {
-      headers: {
-        Authorization: `Bearer ${getState().currentUser.token}`,
-      },
-    })
-      .then((data) => data.json())
+    http.getData('/acquisitions', getState().currentUser.token)
       .then((acquisitions) => {
         dispatch(stopLoading());
         dispatch(addAquisition(acquisitions));
-        console.log(getState());
+        dataCache.store({
+          key: "acquisitions",
+          value: acquisitions,
+        });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => dispatch(showError()));
   }
 }

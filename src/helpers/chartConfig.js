@@ -1,11 +1,12 @@
-const config =  (sites, timestamps) =>  (
-
-  {
+const config =  (item) =>  {
+  const timestamps = item.map(time => new Date(time.timestamp * 1000).toLocaleDateString())
+  const sites =  item.map(acquisition => acquisition.sites)
+  return {
     chart: {
       type: "column",
     },
     title: {
-      text: "Monthly Average Rainfall",
+      text: "Monthly Aquisitions",
     },
     subtitle: {
       text: "",
@@ -42,6 +43,9 @@ const config =  (sites, timestamps) =>  (
       },
     ],
   }
-)
+}
+
+  
+
 
 export default config;
