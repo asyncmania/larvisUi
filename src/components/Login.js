@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useLocation } from "react-router-dom";
-import { login } from "../../actions/auth";
-import { clearError } from "../../actions/error";
-import { startLoading } from "../../actions/loading";
+import { login } from "../actions/auth";
+import { clearError } from "../actions/error";
+import { startLoading } from "../actions/loading";
 
 
 function Login() {

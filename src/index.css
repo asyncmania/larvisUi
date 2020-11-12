@@ -150,6 +150,9 @@ button:hover {
   justify-content: center;
   gap: 2rem;
 }
+.user-details p {
+  text-align: center;
+}
 .user-details button {
   width: auto;
   justify-self: center;

@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Login from "./components/users/Login";
+import Login from "./components/Login";
 import Users from "./components/users/Users";
 import {
   BrowserRouter as Router,

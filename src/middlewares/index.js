@@ -3,12 +3,14 @@ import { applyMiddleware } from "redux";
 import DataCache from './dataCache';
 import Http from './http'
 
+const BASE_URL = 'http://localhost:8080'
+
 const middlewares = [];
 
   middlewares.push(
     thunk.withExtraArgument({
       dataCache: new DataCache(),
-      http: new Http('http://localhost:8080')
+      http: new Http(BASE_URL)
     }),
   );
 

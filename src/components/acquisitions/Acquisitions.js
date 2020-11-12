@@ -16,7 +16,7 @@ function Acquisitions() {
 
   useEffect(() => {
     dispatch(fetchAcquisitions());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="acquisitions">
