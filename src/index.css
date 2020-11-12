@@ -18,62 +18,6 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
-#root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.main-content {
-  flex: 1 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.centered-content{
-  
-}
-.menu {
-  display: flex;
-}
-.logo {
-  margin-right: auto;
-  font-size: 2rem;
-  font-weight: 600;
-}
-.menu-items {
-  display: flex;
-  list-style: none;
-  font-size: 1.4rem;
-  align-items: center;
-}
-.menu-item {
-  margin-left: 2rem;
-}
-.username{
-  font-size: 1.6rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.login {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 8rem 4rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  gap: 1rem;
-}
-
-.welcome{
- display: grid;
-}
-
-.welcome-text{
-  font-size: 2rem;
-  margin: 2rem 0;
-}
-
 label {
   display: block;
   font-size: 1.4rem;
@@ -118,6 +62,90 @@ button:hover {
   color: #2c2c2c;
 }
 
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1 0 auto;
+}
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.menu {
+  display: flex;
+}
+.logo {
+  margin-right: auto;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.menu-items {
+  display: flex;
+  list-style: none;
+  font-size: 1.4rem;
+  align-items: center;
+}
+.menu-item {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.username {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 4rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  gap: 1rem;
+}
+
+.welcome {
+  display: grid;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+.users {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  font-size: 1.4rem;
+}
+
+.user {
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.user-details {
+  margin: 5rem 0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.acquisitions {
+  margin: 5rem 0;
+}
+
 @media (min-width: 500px) {
   .login {
     padding: 8rem 10rem;
@@ -126,8 +154,6 @@ button:hover {
     padding: 4rem;
   }
   .menu-items {
-  
     font-size: 1.6rem;
-
   }
 }

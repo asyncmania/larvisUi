@@ -24,7 +24,7 @@ function Login() {
   }
 
   return (
-    <>
+    <div className="centered-content">
       <div className="login">
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">username</label>
@@ -46,7 +46,7 @@ function Login() {
           <button type="submit" disabled={loading}>{ loading ? 'Logging in...': 'Login'}</button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { logout } from "../actions/auth";
 
 function Header() {
@@ -21,16 +22,15 @@ function Header() {
       <div className="menu">
         <div className="logo">Larvis UI</div>
         <ul className="menu-items">
-          <li className="menu-item">Users</li>
-          <li className="menu-item">Aquisitions</li>
+          <Link className="menu-item" to="/users">
+            Users
+          </Link>
+          <Link to="/acquisitions" className="menu-item">
+            Aquisitions
+          </Link>
           <AuthButton />
         </ul>
       </div>
-      {!!currentUser.name && (
-        <div className="username">
-          <p className="user-text">Welcome {currentUser.name}</p>
-        </div>
-      )}
     </header>
   );
 }

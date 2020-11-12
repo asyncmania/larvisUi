@@ -1,12 +1,12 @@
 import { LOGIN, LOGOUT } from "../actions/auth";
 
 
-const getToken = () => localStorage.getItem('token') 
+const getToken = () =>  localStorage.getItem('token')  
 
 const initialState = {token: getToken(), name: ''}
 
 export default function auth(state = initialState, action) {
-  //const {token, name } = action.payload
+
   switch (action.type) {
     case LOGIN:
       return {
