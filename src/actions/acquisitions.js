@@ -20,9 +20,7 @@ export default function fetchAcquisitions() {
       .then((data) => data.json())
       .then((acquisitions) => {
         dispatch(stopLoading());
-        const timestamps = acquisitions.map(time => new Date(time.timestamp * 1000).toLocaleDateString())
-        const sites =  acquisitions.map(acquisition => acquisition.sites)
-        dispatch(addAquisition({timestamps, sites}));
+        dispatch(addAquisition(acquisitions));
         console.log(getState());
       })
       .catch((error) => console.log(error));

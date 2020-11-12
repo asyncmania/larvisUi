@@ -145,7 +145,16 @@ button:hover {
 .acquisitions {
   margin: 5rem 0;
 }
-
+.acquzitions-slide{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
+.acquzitions-slide button {
+  width: auto;
+  background-color: #464646;
+}
 @media (min-width: 500px) {
   .login {
     padding: 8rem 10rem;
@@ -155,5 +164,13 @@ button:hover {
   }
   .menu-items {
     font-size: 1.6rem;
+  }
+ 
+}
+
+@media(min-width: 1400px){
+  .main-content{
+    width: 114rem;
+    margin: 0 auto;
   }
 }
